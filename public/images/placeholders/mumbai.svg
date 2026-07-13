@@ -1,0 +1,19 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder for a Mumbai photograph">
+  <rect width="800" height="600" fill="#F4EDE1" />
+  <rect x="0.5" y="0.5" width="799" height="599" fill="none" stroke="#221B15" stroke-opacity="0.12" />
+  <g stroke="#221B15" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="0" x2="800" y2="600" />
+    <line x1="800" y1="0" x2="0" y2="600" />
+  </g>
+  <g transform="translate(400,270)" fill="none" stroke="#5E1F28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <rect x="-42" y="-28" width="84" height="58" rx="8" />
+    <circle cx="0" cy="3" r="18" />
+    <path d="M-16 -28 L-9 -40 H9 L16 -28" />
+  </g>
+  <text x="400" y="360" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="24" fill="#5E1F28" opacity="0.75">
+    Mumbai — Marine Drive / Gateway of India
+  </text>
+  <text x="400" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" letter-spacing="2" fill="#8A7C6C">
+    PLACEHOLDER — REPLACE BEFORE LAUNCH
+  </text>
+</svg>

@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  /* Accent theme colour (Claude Design "accent" prop). Overridable at runtime
+     via an inline style on <html> from THEME in src/content/site.ts. */
+  --accent: #5e1f28;
+  /* Photo tone filter (Claude Design "photoTone" prop: natural | warm | mono). */
+  --pf: none;
+}
+
+@theme inline {
+  --color-cream: #fbf7f0;
+  --color-parchment: #f4ede1;
+  --color-ink: #221b15;
+  --color-body: #4a4138;
+  --color-muted: #5a4f44;
+  --color-taupe: #8a7c6c;
+  --color-gold: #c99a4e;
+  --color-accent: var(--accent);
+
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-karla), Arial, Helvetica, sans-serif;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(94, 31, 40, 0.14);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-rise {
+  animation: rise 0.9s ease both;
+}
