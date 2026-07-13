@@ -15,7 +15,7 @@ export const CONTACTS: ContactCard[] = [
   {
     role: "The groom",
     name: "David",
-    note: "Fellow first-timer turned enthusiast. Ask him anything about the guest experience.",
+    note: "Been in your shoes and happy to answer any questions about travelling to India or what to expect.",
   },
   {
     role: "Wedding contact",
