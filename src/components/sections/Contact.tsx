@@ -6,9 +6,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-[72px] bg-ink px-[clamp(20px,6vw,64px)] pt-[clamp(72px,9vw,120px)] pb-[clamp(48px,6vw,72px)] text-parchment"
+      className="scroll-mt-18 bg-ink px-[clamp(20px,6vw,64px)] pt-[clamp(72px,9vw,120px)] pb-[clamp(48px,6vw,72px)] text-parchment"
     >
-      <div className="mx-auto max-w-[1160px]">
+      <div className="mx-auto max-w-290">
         <SectionIntro
           tone="dark"
           eyebrow="Here for you"
@@ -21,7 +21,7 @@ export function Contact() {
           {CONTACTS.map((contact) => (
             <div
               key={contact.role}
-              className="rounded-2xl border border-cream/[0.13] bg-cream/[0.05] px-[22px] py-6"
+              className="rounded-2xl border border-cream/13 bg-cream/5 px-5.5 py-6"
             >
               <p className="m-0 mb-1.5 text-[10.5px] font-bold tracking-[0.2em] text-gold uppercase">
                 {contact.role}
@@ -32,7 +32,7 @@ export function Contact() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-cream/[0.13] p-7">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-cream/13 p-7">
           <div>
             <p className="m-0 mb-1 text-[10.5px] font-bold tracking-[0.2em] text-parchment/55 uppercase">
               Email us anytime
