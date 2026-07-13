@@ -1,4 +1,5 @@
 import { Nav } from "@/components/Nav";
+import { BackToTop } from "@/components/BackToTop";
 import { Hero } from "@/components/sections/Hero";
 import { Welcome } from "@/components/sections/Welcome";
 import { Timeline } from "@/components/sections/Timeline";
@@ -22,6 +23,7 @@ export default function Home() {
         <Faq />
         <Contact />
       </div>
+      <BackToTop />
     </>
   );
 }
