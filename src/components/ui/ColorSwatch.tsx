@@ -27,7 +27,6 @@ export function ColorSwatch({ hex, size = 22, tone = "dark" }: ColorSwatchProps)
           tone === "dark" ? "text-ink/55" : "text-cream/65"
         }`}
       >
-        {name}
       </span>
     </span>
   );
