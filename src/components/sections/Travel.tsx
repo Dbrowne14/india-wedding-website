@@ -64,18 +64,28 @@ export function Travel() {
         />
 
         <div className="mt-10 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[18px]">
-          <ImagePlaceholder
-            src="/images/placeholders/mumbai.svg"
-            alt="Placeholder for a Mumbai photograph"
-            className="h-[240px] rounded-2xl"
-            sizes="(min-width: 640px) 50vw, 100vw"
-          />
-          <ImagePlaceholder
-            src="/images/placeholders/bhopal.svg"
-            alt="Placeholder for a Bhopal photograph"
-            className="h-[240px] rounded-2xl"
-            sizes="(min-width: 640px) 50vw, 100vw"
-          />
+          <figure className="m-0">
+            <ImagePlaceholder
+              src="/images/site/mumbai.jpg"
+              alt="Placeholder for a Mumbai photograph"
+              className="h-[240px] rounded-2xl"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="mt-2 text-center font-serif text-[13px] text-taupe italic">
+              View from Bandra Fort, Mumbai
+            </figcaption>
+          </figure>
+          <figure className="m-0">
+            <ImagePlaceholder
+              src="/images/site/bhopal.jpg"
+              alt="Placeholder for a Bhopal photograph"
+              className="h-[240px] rounded-2xl"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="mt-2 text-center font-serif text-[13px] text-taupe italic">
+              Taj-ul-Masajid, Bhopal
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
