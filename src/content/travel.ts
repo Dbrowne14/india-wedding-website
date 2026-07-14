@@ -1,6 +1,8 @@
 export type TravelRow = {
   label: string;
   text: string;
+  /** Marks a row that needs a guest's attention/action — shows a small inline cue next to the label. */
+  important?: boolean;
 };
 
 export type TravelStep = {
@@ -77,13 +79,15 @@ export const TRAVEL_STEPS: TravelStep[] = [
     subtitle: "Your wedding stay is on us",
     rows: [
       {
+        label: "Passport copy for hotel check-in",
+        text: "Please send us a copy of your passport before you travel so we can help prepare the hotel registration in Bhopal and make check-in as smooth as possible.",
+        important: true,
+      },
+      {
         label: "During the wedding",
         text: "Your stay is taken care of for the duration of the celebrations — check-in 24 November (rooms from 2:00 PM; drop your bags and join lunch), check-out 26 November at 11 AM.",
       },
-      {
-        label: "Passport copy for hotel check-in",
-        text: "Please send us a copy of your passport before you travel so we can help prepare the hotel registration in Bhopal and make check-in as smooth as possible.",
-      },
+
       {
         label: "Arriving early?",
         text: "For the night of the 23rd we recommend Jehan Numa Retreat, Jehan Numa Palace, or Taj Lakefront.",
