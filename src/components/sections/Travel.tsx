@@ -30,9 +30,9 @@ export function Travel() {
         {step.rows.map((row) => (
           <div
             key={row.label}
-            className="grid grid-cols-[minmax(120px,180px)_1fr] items-baseline gap-x-[18px] gap-y-2.5"
+            className="grid grid-cols-[minmax(0,100px)_minmax(0,1fr)] items-baseline gap-x-[18px] gap-y-2.5 md:grid-cols-[minmax(120px,180px)_1fr]"
           >
-            <p className="m-0 flex items-center gap-1.5 text-[11px] font-bold tracking-[0.14em] text-accent uppercase">
+            <p className="m-0 flex min-w-0 items-center gap-1.5 text-[11px] font-bold tracking-[0.14em] text-accent uppercase">
               {row.label}
               {row.important ? (
                 <svg
@@ -53,7 +53,7 @@ export function Travel() {
                 </svg>
               ) : null}
             </p>
-            <p className="m-0 text-[14.5px] leading-[1.7] text-body">{row.text}</p>
+            <p className="m-0 min-w-0 text-[14.5px] leading-[1.7] text-body">{row.text}</p>
           </div>
         ))}
       </div>
