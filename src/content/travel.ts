@@ -16,11 +16,15 @@ export const TRAVEL_STEPS: TravelStep[] = [
     rows: [
       {
         label: "Recommended",
-        text: "BA 199 — departs London 20:25, arrives Mumbai 11:05 next morning. Our pick of the two.",
+        text: "BA 199 — departs London 20:25, arrives Mumbai 11:05 next morning. Our pick.",
       },
       {
         label: "Alternative",
         text: "BA 135 — departs 16:15, arrives 06:40. Good if you want a full first day.",
+      },
+      {
+        label: "Another alternative",
+        text: "VS 354 — departs London 18:10, arrives Mumbai 08:45",
       },
       {
         label: "Why arrive early",

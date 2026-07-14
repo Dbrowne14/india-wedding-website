@@ -33,6 +33,11 @@ export const ITINERARY_DAYS: ItineraryDay[] = [
         name: "Alternative",
         note: "departs 16:15, arrives 06:40 — for early risers",
       },
+      {
+        time: "VS 354",
+        name: "Another alternative",
+        note: "departs London 18:10, arrives 08:45",
+      },
     ],
   },
   {
