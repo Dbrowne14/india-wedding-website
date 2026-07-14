@@ -66,6 +66,10 @@ export const TRAVEL_STEPS: TravelStep[] = [
         label: "Arriving on the 23rd",
         text: "Fly in a day early and explore Bhopal at your own pace — see the hotels below.",
       },
+      {
+        label: "Domestic Flight Tips",
+        text: "We recommend arriving at the airport at least 2 hours before your domestic flight. Please check your baggage allowance before travelling — most economy fares include 15 kg checked baggage and 7 kg cabin baggage, though allowances can vary depending on your airline and ticket type.",
+      },
     ],
   },
   {
@@ -75,6 +79,10 @@ export const TRAVEL_STEPS: TravelStep[] = [
       {
         label: "During the wedding",
         text: "Your stay is taken care of for the duration of the celebrations — check-in 24 November (rooms from 2:00 PM; drop your bags and join lunch), check-out 26 November at 11 AM.",
+      },
+      {
+        label: "Passport copy for hotel check-in",
+        text: "Please send us a copy of your passport before you travel so we can help prepare the hotel registration in Bhopal and make check-in as smooth as possible.",
       },
       {
         label: "Arriving early?",

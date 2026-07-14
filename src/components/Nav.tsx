@@ -66,7 +66,7 @@ export function Nav() {
         <a
           href="#home"
           aria-label="Top"
-          className="flex-none py-3.5 font-serif text-[19px] font-semibold tracking-[0.06em] text-ink"
+          className="flex-none rounded-sm py-3.5 font-serif text-[19px] font-semibold tracking-[0.06em] text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
         >
           S&nbsp;·&nbsp;D
         </a>
@@ -79,7 +79,7 @@ export function Nav() {
                 key={item.id}
                 href={`#${item.id}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`flex-none px-[11px] py-4 text-xs tracking-[0.1em] uppercase transition-colors duration-200 hover:text-ink ${
+                className={`flex-none rounded-sm px-[11px] py-4 text-xs tracking-[0.1em] uppercase transition-colors duration-200 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
                   isActive ? "font-bold text-ink" : "font-semibold text-taupe"
                 }`}
               >
@@ -95,7 +95,7 @@ export function Nav() {
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-panel"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          className="ml-auto flex-none p-2 text-ink md:hidden"
+          className="ml-auto flex-none rounded-sm p-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream md:hidden"
         >
           <MenuIcon open={mobileOpen} />
         </button>
@@ -115,7 +115,7 @@ export function Nav() {
                   href={`#${item.id}`}
                   onClick={() => setMobileOpen(false)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`block py-3 text-sm tracking-[0.08em] uppercase ${
+                  className={`block rounded-sm py-3 text-sm tracking-[0.08em] uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
                     isActive ? "font-bold text-ink" : "font-semibold text-taupe"
                   }`}
                 >

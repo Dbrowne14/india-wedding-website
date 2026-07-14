@@ -39,25 +39,27 @@ export function Contact() {
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-serif text-[clamp(20px,3vw,27px)] font-semibold text-cream hover:text-gold"
+              className="rounded-sm font-serif text-[clamp(20px,3vw,27px)] font-semibold text-cream hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               {CONTACT_EMAIL}
             </a>
           </div>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="rounded-full border border-cream/30 px-6 py-3.5 text-xs font-bold tracking-[0.14em] text-cream uppercase transition-colors duration-200 hover:border-cream"
+            className="rounded-full border border-cream/30 px-6 py-3.5 text-xs font-bold tracking-[0.14em] text-cream uppercase transition-colors duration-200 hover:border-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
           >
             Write to us
           </a>
         </div>
 
-        <p className="mx-auto mt-16 max-w-2xl text-center font-serif text-[clamp(22px,3.4vw,32px)] text-parchment/85 italic">
-          We can&apos;t wait to celebrate with you.
-        </p>
-        <p className="mt-4 text-center text-[11px] font-bold tracking-[0.28em] text-parchment/40 uppercase">
-          {COUPLE_NAMES.bride} &amp; {COUPLE_NAMES.groom} · India · {WEDDING_DATE_LABEL}
-        </p>
+        <footer>
+          <p className="mx-auto mt-16 max-w-2xl text-center font-serif text-[clamp(22px,3.4vw,32px)] text-parchment/85 italic">
+            We can&apos;t wait to celebrate with you.
+          </p>
+          <p className="mt-4 text-center text-[11px] font-bold tracking-[0.28em] text-parchment/40 uppercase">
+            {COUPLE_NAMES.bride} &amp; {COUPLE_NAMES.groom} · India · {WEDDING_DATE_LABEL}
+          </p>
+        </footer>
       </div>
     </section>
   );

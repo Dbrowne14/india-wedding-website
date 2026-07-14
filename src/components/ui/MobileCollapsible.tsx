@@ -59,7 +59,9 @@ export function MobileCollapsible({
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <div className="overflow-hidden">{children}</div>
+        <div className="overflow-hidden" aria-hidden={!open}>
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -38,16 +38,18 @@ export function Accordion({
 
         return (
           <div key={item.id} className={itemClassName}>
-            <button
-              id={triggerId}
-              type="button"
-              aria-expanded={isOpen}
-              aria-controls={panelId}
-              onClick={() => setOpenId(isOpen ? null : item.id)}
-              className={triggerClassName}
-            >
-              {item.trigger}
-            </button>
+            <h3 className="m-0">
+              <button
+                id={triggerId}
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                onClick={() => setOpenId(isOpen ? null : item.id)}
+                className={triggerClassName}
+              >
+                {item.trigger}
+              </button>
+            </h3>
             <div
               id={panelId}
               role="region"

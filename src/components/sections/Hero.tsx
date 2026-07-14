@@ -27,13 +27,13 @@ export function Hero() {
       <div className="mt-9 flex flex-wrap justify-center gap-3">
         <a
           href="#events"
-          className="inline-block rounded-full bg-accent px-7 py-[15px] text-[12.5px] font-bold tracking-[0.14em] text-cream uppercase transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(60,25,30,0.22)]"
+          className="inline-block rounded-full bg-accent px-7 py-[15px] text-[12.5px] font-bold tracking-[0.14em] text-cream uppercase transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(60,25,30,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
         >
           Explore the celebration
         </a>
         <a
           href="#travel"
-          className="inline-block rounded-full border border-ink/25 px-7 py-[15px] text-[12.5px] font-bold tracking-[0.14em] text-ink uppercase transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-ink"
+          className="inline-block rounded-full border border-ink/25 px-7 py-[15px] text-[12.5px] font-bold tracking-[0.14em] text-ink uppercase transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
         >
           Travel guide
         </a>
@@ -42,7 +42,7 @@ export function Hero() {
       <div className="mx-auto mt-[clamp(48px,7vw,84px)] h-[clamp(260px,44vw,520px)] max-w-[1160px]">
         <ImagePlaceholder
           src="/images/site/hero_alt.jpg"
-          alt="Placeholder for the couple's hero photograph"
+          alt="Watercolour illustration of the Gateway of India in Mumbai and the Taj-ul-Masajid in Bhopal"
           className="h-full w-full rounded-[20px]"
           sizes="(min-width: 1160px) 1160px, 100vw"
           priority

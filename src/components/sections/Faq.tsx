@@ -35,7 +35,7 @@ export function Faq() {
           defaultOpenId={null}
           className="mt-10 border-t border-ink/[0.12]"
           itemClassName="border-b border-ink/[0.12]"
-          triggerClassName="group flex w-full cursor-pointer items-center gap-4 bg-transparent px-1 py-5 text-left font-sans hover:bg-ink/[0.02]"
+          triggerClassName="group flex w-full cursor-pointer items-center gap-4 bg-transparent px-1 py-5 text-left font-sans hover:bg-ink/[0.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
         />
       </div>
     </section>

@@ -60,14 +60,14 @@ export function Travel() {
           defaultOpenId="travel-0"
           className="mt-10 flex flex-col gap-3"
           itemClassName="overflow-hidden rounded-2xl border border-ink/10 bg-cream"
-          triggerClassName="group flex w-full cursor-pointer items-center gap-4 bg-transparent px-[clamp(18px,3vw,28px)] py-5 text-left font-sans hover:bg-parchment"
+          triggerClassName="group flex w-full cursor-pointer items-center gap-4 bg-transparent px-[clamp(18px,3vw,28px)] py-5 text-left font-sans hover:bg-parchment focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
         />
 
         <div className="mt-10 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[18px]">
           <figure className="m-0">
             <ImagePlaceholder
               src="/images/site/mumbai.jpg"
-              alt="Placeholder for a Mumbai photograph"
+              alt="The Bandra-Worli Sea Link bridge over the Arabian Sea at dusk, with the Mumbai skyline in the distance"
               className="h-[240px] rounded-2xl"
               sizes="(min-width: 640px) 50vw, 100vw"
             />
@@ -78,7 +78,7 @@ export function Travel() {
           <figure className="m-0">
             <ImagePlaceholder
               src="/images/site/bhopal.jpg"
-              alt="Placeholder for a Bhopal photograph"
+              alt="Taj-ul-Masajid mosque in Bhopal, viewed across the lake"
               className="h-[240px] rounded-2xl"
               sizes="(min-width: 640px) 50vw, 100vw"
             />

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="min-w-[320px]">
+      <main className="min-w-[320px]">
         <Hero />
         <Welcome />
         <Timeline />
@@ -22,7 +22,7 @@ export default function Home() {
         <IndiaGuide />
         <Faq />
         <Contact />
-      </div>
+      </main>
       <BackToTop />
     </>
   );

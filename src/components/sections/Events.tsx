@@ -25,7 +25,11 @@ export function Events() {
             >
               <div className="mb-[18px] flex flex-wrap gap-3">
                 {event.swatchHexes.map((hex, index) => (
-                  <ColorSwatch key={`${event.name}-${hex}-${index}`} hex={hex} tone="light" />
+                  <ColorSwatch
+                    key={`${event.name}-${hex}-${index}`}
+                    hex={hex}
+                    tone="light"
+                  />
                 ))}
               </div>
               <p className="m-0 mb-1 text-[10.5px] font-bold tracking-[0.2em] text-parchment/55 uppercase">
@@ -48,7 +52,9 @@ export function Events() {
                     <p className="m-0 mb-0.5 text-[10px] font-bold tracking-[0.18em] text-parchment/50 uppercase">
                       {row.label}
                     </p>
-                    <p className="m-0 text-[13.5px] leading-[1.6] text-parchment/90">{row.text}</p>
+                    <p className="m-0 text-[13.5px] leading-[1.6] text-parchment/90">
+                      {row.text}
+                    </p>
                   </div>
                 ))}
               </div>
