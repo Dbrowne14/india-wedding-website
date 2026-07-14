@@ -18,7 +18,7 @@ type MobileCollapsibleProps = {
  */
 export function MobileCollapsible({
   label,
-  defaultOpen = true,
+  defaultOpen = false,
   className,
   children,
 }: MobileCollapsibleProps) {
