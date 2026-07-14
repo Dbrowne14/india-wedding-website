@@ -41,7 +41,7 @@ export function Hero() {
 
       <div className="mx-auto mt-[clamp(48px,7vw,84px)] h-[clamp(260px,44vw,520px)] max-w-[1160px]">
         <ImagePlaceholder
-          src="/images/site/hero.jpg"
+          src="/images/site/hero_alt.jpg"
           alt="Placeholder for the couple's hero photograph"
           className="h-full w-full rounded-[20px]"
           sizes="(min-width: 1160px) 1160px, 100vw"

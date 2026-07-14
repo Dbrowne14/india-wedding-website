@@ -27,7 +27,7 @@ export function Contact() {
                 {contact.role}
               </p>
               <p className="m-0 mb-2 font-serif text-2xl font-semibold text-cream">{contact.name}</p>
-              <p className="m-0 text-[13.5px] leading-[1.6] text-parchment/75">{contact.note}</p>
+              <p className="m-0 text-[13.5px] leading-[1.6] text-parchment/75 whitespace-pre-line">{contact.note}</p>
             </div>
           ))}
         </div>

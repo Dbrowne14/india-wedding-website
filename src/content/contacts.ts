@@ -10,7 +10,7 @@ export const CONTACTS: ContactCard[] = [
   {
     role: "The bride",
     name: "Sushmeena",
-    note: "Mumbai-born, your unofficial city guide. WhatsApp number to follow with the invitation.",
+    note: "Mumbai-born, your unofficial city guide. Happy to share local recommendations, food favourites and hidden gems.",
   },
   {
     role: "The groom",
@@ -19,8 +19,8 @@ export const CONTACTS: ContactCard[] = [
   },
   {
     role: "Wedding contact",
-    name: "On-the-ground help",
-    note: "A dedicated contact in Bhopal for the wedding days — name and number to follow.",
+    name: "Animesh (Sush's dad)",
+    note: "Our local emergency contact throughout the celebrations.\nContact number: ‭+91 99201 46508‬",
   },
   {
     role: "Emergency",
