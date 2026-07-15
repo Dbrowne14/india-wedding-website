@@ -25,9 +25,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: SITE_URL,
-    siteName: SITE_TITLE,
+    url: "/",
+    siteName: "Sushmeena & David",
     type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sushmeena and David — Wedding in Bhopal, India, November 2026",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
