@@ -18,7 +18,7 @@ export const EVENTS: EventCard[] = [
     day: "Day One · 12:30–2 PM",
     tagline: "Ease in over a long lunch — everyone’s first hello",
     participation: "Everyone welcome",
-    swatchHexes: ["#EBDDC3", "#FBF7F0", "#8A7C6C"],
+    swatchHexes: ["#FFFFFF14","#FFFFFF14", "#FFFFFF14"],
     rows: [
       { label: "Wear", text: "Casual — comfortable, travel-friendly clothes" },
       { label: "Feet", text: "Whatever you landed in" },
@@ -72,7 +72,13 @@ export const EVENTS: EventCard[] = [
     day: "Day Two · 4–6 PM",
     tagline: "The procession, then vows around the sacred fire",
     participation: "Dance in the Baraat, witness the Phere",
-    swatchHexes: ["#33503E", "#2E5950", "#C99A4E", "#D9A441", "#EBDDC3"],
+    swatchHexes: [
+      "#2E6B47", // Emerald Green
+      "#2F5FD0", // Royal Blue
+      "#D4A32A", // Mustard Yellow
+      "#E83E8C", // Vibrant Pink
+      "#7A3DB8", // Royal Purple
+    ],
     rows: [
       {
         label: "Wear",
@@ -83,7 +89,10 @@ export const EVENTS: EventCard[] = [
         label: "Comfort",
         text: "You’ll be outdoors and dancing for the Baraat — modest and respectful for the Phere",
       },
-      { label: "Avoid", text: "Very revealing outfits; shoes come off near the mandap" },
+      {
+        label: "Avoid",
+        text: "Very revealing outfits; shoes come off near the mandap",
+      },
     ],
   },
   {
