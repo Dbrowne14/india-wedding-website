@@ -1,6 +1,6 @@
 // PLACEHOLDER PRODUCTION URL — replace with the real deployed domain before launch.
 // Used for metadataBase, Open Graph/Twitter absolute URLs, robots.ts and sitemap.ts.
-export const SITE_URL = "https://REPLACE-WITH-PRODUCTION-DOMAIN.example";
+export const SITE_URL = "https://sush-and-david-wedding.vercel.app/";
 
 export const SITE_TITLE = "David & Sushmeena | India Wedding Guide";
 
