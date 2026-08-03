@@ -121,7 +121,7 @@ export const INDIA_GUIDE: IndiaGuideCard[] = [
     title: "SIM & connectivity",
     icon: "sim",
     points: [
-      "Roam, or grab a local SIM at the airport",
+      "Contact us for referral codes for eligible eSIM providers",
       "Data unlocks maps, rides, translation and payments",
     ],
   },
