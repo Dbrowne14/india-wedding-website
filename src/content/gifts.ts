@@ -9,12 +9,14 @@ export type GiftRoute = {
   title: string;
   glyph: string;
   sub: string;
-  rows: GiftRow[];
   note?: string;
   // wiseUrl?: string; // reserved for a future Wise payment link
 };
 
 export type GiftRouteId = "uk" | "intl";
+
+/** Response shape of GET /api/gift-details?route=<GiftRouteId>. */
+export type GiftDetailsResponse = { rows: GiftRow[] };
 
 export const GIFTS_PARAGRAPHS = [
   "Having you celebrate with us in India is more than enough, and we truly don't expect gifts from anyone.",
@@ -25,41 +27,22 @@ export const GIFTS_PARAGRAPHS = [
 
 export const GIFT_REFERENCE_NOTE = "Please use your name as the reference, so we know who to thank.";
 
-// Bank details come from env vars so they stay out of this public repo (see
-// .env.example). NEXT_PUBLIC_ values are inlined into the client bundle at
-// build time, so they are hidden from git, not from site visitors. Each one
-// must be referenced literally for Next.js to inline it.
-const NOT_SET = "[not set]";
-
-function envRow(label: string, value: string | undefined): GiftRow {
-  const shown = value?.trim() || NOT_SET;
-  // Strip spaces/dashes so sort codes and IBANs paste cleanly into banking apps.
-  const compact = shown.replace(/[\s-]/g, "");
-  return compact === shown ? { label, value: shown } : { label, value: shown, copyValue: compact };
-}
-
-const ACCOUNT_NAME = process.env.NEXT_PUBLIC_GIFT_ACCOUNT_NAME;
-
+// Client-safe card content only. The bank details themselves are server-only:
+// see src/lib/giftDetails.ts, served by src/app/api/gift-details/route.ts.
 export const GIFT_ROUTES: Record<GiftRouteId, GiftRoute> = {
   uk: {
     title: "UK bank transfer",
     glyph: "£",
     sub: "For guests transferring from a UK bank account.",
-    rows: [
-      envRow("Account name", ACCOUNT_NAME),
-      envRow("Sort code", process.env.NEXT_PUBLIC_GIFT_UK_SORT_CODE),
-      envRow("Account number", process.env.NEXT_PUBLIC_GIFT_UK_ACCOUNT_NUMBER),
-    ],
   },
   intl: {
     title: "International transfer",
     glyph: "↔",
     sub: "For guests transferring from outside the UK.",
-    rows: [
-      envRow("Account name", ACCOUNT_NAME),
-      envRow("IBAN", process.env.NEXT_PUBLIC_GIFT_INTL_IBAN),
-      envRow("BIC / SWIFT", process.env.NEXT_PUBLIC_GIFT_INTL_BIC),
-    ],
     note: "Sending from abroad? Services such as Wise often offer better exchange rates and lower fees than a bank transfer.",
   },
 };
+
+export function isGiftRouteId(value: string | null): value is GiftRouteId {
+  return value !== null && Object.hasOwn(GIFT_ROUTES, value);
+}

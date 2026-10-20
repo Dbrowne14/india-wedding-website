@@ -6,7 +6,9 @@ import {
   GIFT_REFERENCE_NOTE,
   GIFT_ROUTES,
   GIFTS_PARAGRAPHS,
+  type GiftDetailsResponse,
   type GiftRouteId,
+  type GiftRow,
 } from "@/content/gifts";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 
@@ -42,12 +44,16 @@ async function copyText(text: string): Promise<boolean> {
 }
 
 /**
- * Bank details stay hidden until a guest picks a route (UK / international).
- * Only one route is open at a time; clicking the open card again closes it.
+ * Bank details stay hidden until a guest picks a route (UK / international),
+ * and are only fetched from /api/gift-details at that point, so they're never
+ * part of the page or its JS bundle. Only one route is open at a time;
+ * clicking the open card again closes it.
  */
 export function Gifts() {
   const [selected, setSelected] = useState<GiftRouteId | null>(null);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [rowsByRoute, setRowsByRoute] = useState<Partial<Record<GiftRouteId, GiftRow[]>>>({});
+  const [loadErrorFor, setLoadErrorFor] = useState<GiftRouteId | null>(null);
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -64,7 +70,29 @@ export function Gifts() {
     resetTimer.current = setTimeout(() => setCopiedKey(null), COPIED_RESET_MS);
   }
 
+  async function loadRows(id: GiftRouteId) {
+    setLoadErrorFor(null);
+    try {
+      const res = await fetch(`/api/gift-details?route=${id}`, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Gift details request failed: ${res.status}`);
+      const data = (await res.json()) as GiftDetailsResponse;
+      setRowsByRoute((prev) => ({ ...prev, [id]: data.rows }));
+    } catch {
+      setLoadErrorFor(id);
+    }
+  }
+
+  function toggleRoute(id: GiftRouteId) {
+    if (selected === id) {
+      setSelected(null);
+      return;
+    }
+    setSelected(id);
+    if (!rowsByRoute[id]) void loadRows(id);
+  }
+
   const route = selected ? GIFT_ROUTES[selected] : null;
+  const rows = selected ? rowsByRoute[selected] : undefined;
 
   // On mobile (single column) the panel sits directly under the card that
   // opened it; from `sm` up `order-last` moves it below both cards.
@@ -90,8 +118,32 @@ export function Gifts() {
           </button>
         </div>
 
-        <dl className="m-0 border-t border-ink/[0.1]">
-          {route.rows.map((row) => {
+        <dl className="m-0 border-t border-ink/[0.1]" aria-busy={!rows && loadErrorFor !== selected}>
+          {!rows ? (
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-ink/[0.1] py-3.5 text-[14.5px] text-muted">
+              {loadErrorFor === selected ? (
+                <>
+                  <dt className="sr-only">Status</dt>
+                  <dd className="m-0">Sorry, we couldn&apos;t load these details.</dd>
+                  <dd className="m-0">
+                    <button
+                      type="button"
+                      onClick={() => loadRows(selected)}
+                      className={`cursor-pointer rounded-full border border-ink/25 bg-transparent px-4 py-2 text-[11px] font-bold tracking-[0.12em] text-ink uppercase transition-colors duration-200 hover:border-ink ${focusRing} focus-visible:ring-offset-white`}
+                    >
+                      Try again
+                    </button>
+                  </dd>
+                </>
+              ) : (
+                <>
+                  <dt className="sr-only">Status</dt>
+                  <dd className="m-0">Loading details…</dd>
+                </>
+              )}
+            </div>
+          ) : null}
+          {rows?.map((row) => {
             const key = `${selected}:${row.label}`;
             const isCopied = copiedKey === key;
             return (
@@ -159,7 +211,7 @@ export function Gifts() {
               <Fragment key={id}>
                 <button
                   type="button"
-                  onClick={() => setSelected(isSelected ? null : id)}
+                  onClick={() => toggleRoute(id)}
                   aria-expanded={isSelected}
                   aria-controls="gift-details"
                   className={`flex cursor-pointer items-start gap-4 rounded-2xl border px-[22px] pt-[22px] pb-5 text-left font-sans transition-[transform,box-shadow,background-color,border-color] duration-300 hover:-translate-y-[3px] hover:shadow-[0_14px_30px_-18px_rgba(34,27,21,0.35)] ${focusRing} focus-visible:ring-offset-parchment ${
