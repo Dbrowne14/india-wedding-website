@@ -3,6 +3,15 @@
 import { useEffect, useState } from "react";
 import { NAV_ITEMS } from "@/content/nav";
 
+function NewDot() {
+  return (
+    <>
+      <span aria-hidden="true" className="h-[5px] w-[5px] flex-none rounded-full bg-accent" />
+      <span className="sr-only">(recently added)</span>
+    </>
+  );
+}
+
 function MenuIcon({ open }: { open: boolean }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" aria-hidden="true">
@@ -79,11 +88,12 @@ export function Nav() {
                 key={item.id}
                 href={`#${item.id}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`flex-none rounded-sm px-[11px] py-4 text-xs tracking-[0.1em] uppercase transition-colors duration-200 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
+                className={`flex flex-none items-center gap-1.5 rounded-sm px-[11px] py-4 text-xs tracking-[0.1em] uppercase transition-colors duration-200 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
                   isActive ? "font-bold text-ink" : "font-semibold text-taupe"
                 }`}
               >
                 {item.label}
+                {item.isNew ? <NewDot /> : null}
               </a>
             );
           })}
@@ -115,11 +125,12 @@ export function Nav() {
                   href={`#${item.id}`}
                   onClick={() => setMobileOpen(false)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`block rounded-sm py-3 text-sm tracking-[0.08em] uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
+                  className={`flex items-center gap-1.5 rounded-sm py-3 text-sm tracking-[0.08em] uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
                     isActive ? "font-bold text-ink" : "font-semibold text-taupe"
                   }`}
                 >
                   {item.label}
+                  {item.isNew ? <NewDot /> : null}
                 </a>
               </li>
             );

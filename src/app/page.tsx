@@ -8,6 +8,7 @@ import { Events } from "@/components/sections/Events";
 import { Travel } from "@/components/sections/Travel";
 import { IndiaGuide } from "@/components/sections/IndiaGuide";
 import { Faq } from "@/components/sections/Faq";
+import { Gifts } from "@/components/sections/Gifts";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <Travel />
         <IndiaGuide />
         <Faq />
+        <Gifts />
         <Contact />
       </main>
       <BackToTop />
