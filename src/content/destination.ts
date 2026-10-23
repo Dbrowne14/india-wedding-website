@@ -4,7 +4,7 @@ export const VENUE = {
   location: "Bhopal, Madhya Pradesh · India",
   badge: "Two days · one place",
   paragraphs: [
-    "Giovanni Village is where we'll be celebrating throughout the weekend. Surrounded by greenery and open spaces, it provides a peaceful setting where every ceremony, meal and celebration takes place.",
+    "Giovanni Village is where we'll be celebrating throughout the event. Surrounded by greenery and open spaces, it provides a peaceful setting where every ceremony, meal and celebration takes place.",
     "Once you arrive, you'll have everything you need to make the most of the celebration with family and friends.",
   ],
   address: "Giovanni Village, Kolar Road\nBhopal, Madhya Pradesh 462042, India",
